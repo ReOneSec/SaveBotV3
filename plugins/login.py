@@ -15,7 +15,7 @@ from plugins.batch import UB, UC
 from utils.custom_filters import login_in_progress, set_user_step, get_user_step
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-model = "v3saver Team SPY"
+model = "DiggiDigiV3"
 
 STEP_PHONE = 1
 STEP_CODE = 2
@@ -160,7 +160,7 @@ Please try again with /login.""")
                 set_user_step(user_id, STEP_PASSWORD)
                 await edit_message_safely(status_msg,
                     """🔒 Two-step verification is enabled.
-Please enter your password:"""
+Please enter your 2FA/Security password:"""
                     )
             except (PhoneCodeInvalid, PhoneCodeExpired) as e:
                 await edit_message_safely(status_msg,
